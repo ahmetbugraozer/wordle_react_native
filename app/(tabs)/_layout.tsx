@@ -7,24 +7,9 @@ export default function Layout() {
         headerShown: false,
       }}
     >
-      <Stack.Screen 
-        name="index" 
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen 
-        name="home" 
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen 
-        name="game/wordle" 
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Stack.Screen name="index" />
+      <Stack.Screen name="home" />
+      <Stack.Screen name="game/wordle" />
     </Stack>
   );
 }
