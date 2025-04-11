@@ -48,19 +48,31 @@ class WordService {
 }
 
 class WordValidatorService {
-  private static dictionary: WordValidatorDictionary = {};
   private static isInitialized = false;
+  private static actualWord: string = ''; // Cevap kelimesini sakla
 
   static async initialize(): Promise<void> {
-    // Dictionary yükleme işlemini kaldırıyoruz
-    // Geçici olarak tüm kelimelere izin vereceğiz
     this.isInitialized = true;
     return Promise.resolve();
   }
 
-  static isValidWord(word: string): boolean {
-    // Geçici olarak tüm kelimelere izin ver
-    return true;
+  static setActualWord(word: string): void {
+    this.actualWord = word;
+  }
+
+  static async isValidWord(word: string): Promise<boolean> {
+    // Eğer girilen kelime cevap kelimesiyse direkt kabul et
+    if (word.toLowerCase() === this.actualWord.toLowerCase()) {
+      return true;
+    }
+
+    try {
+      const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word.toLowerCase()}`);
+      return response.ok;
+    } catch (error) {
+      console.error('Dictionary validation error:', error);
+      return true;
+    }
   }
 }
 

@@ -131,8 +131,8 @@ export default function WordlePage() {
     forceUpdate({});
   };
 
-  const handleEnter = () => {
-    gameLogic.enter();
+  const handleEnter = async () => {
+    await gameLogic.enter();
     forceUpdate({});
   };
 

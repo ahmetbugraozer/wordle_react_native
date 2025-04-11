@@ -33,6 +33,7 @@ export class GameLogic {
 
   public initializeGame(): void {
     this.actualWord = this.wordList[0];
+    WordValidatorService.setActualWord(this.actualWord); // Kelimeyi validator'a bildir
     console.log('Debug - Actual Word:', this.actualWord);
     this.gameIndex = 0;
     this.trueLetters = '';
@@ -96,22 +97,22 @@ export class GameLogic {
 
     this.backgrounds[this.gameIndex] = result;
   }
-
-  public enter(): void {
+  public async enter(): Promise<void> {
     if (this.gameFinished || 
         this.wordsEntered[this.gameIndex].length !== this.wordLength) {
       return;
     }
-
+  
     // Kelime kontrolü
-    if (!WordValidatorService.isValidWord(this.wordsEntered[this.gameIndex])) {
+    const isValid = await WordValidatorService.isValidWord(this.wordsEntered[this.gameIndex]);
+    if (!isValid) {
       this.continueStatus = false;
       return;
     }
-
+  
     this.evaluateAndChangeBackgrounds();
     this.continueStatus = true;
-
+  
     // Oyun durumunu kontrol et
     if (this.backgrounds[this.gameIndex] === 't'.repeat(this.wordLength)) {
       this.gameFinished = true;
