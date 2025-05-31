@@ -33,7 +33,6 @@ yarn-error.*
 
 .env
 google-services.json
-firebase.ts
 
 # typescript
 *.tsbuildinfo
