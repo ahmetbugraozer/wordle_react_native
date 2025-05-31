@@ -1,0 +1,14 @@
+```groovy
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services' // Bu satırı ekleyin
+
+android {
+    // ...existing code...
+}
+
+dependencies {
+    // ...existing code...
+    implementation(platform("com.google.firebase:firebase-bom:33.14.0"))
+    implementation 'com.google.firebase:firebase-analytics'
+}
+```
