@@ -26,6 +26,11 @@ React Native ve Expo ile geliştirilmiş modern bir Wordle oyunu. Firebase enteg
   - Seri sayacı (giriş yapan kullanıcılar için)
 - **Kullanım**: Kullanıcı oyuna başlamak için kelime uzunluğunu seçer
 
+<img src="https://github.com/user-attachments/assets/0032a642-259f-41a9-8af3-da5ff6847642" alt="Screenshot_1750200318" width="25%">
+
+<img src="https://github.com/user-attachments/assets/74deb3e8-e4f3-4ccf-852c-1f4374897c4f" alt="Screenshot_1750200336" width="25%">
+
+
 ### 🎯 Oyun Ekranı
 - **Görünüm**: 
   - Üst kısımda kelime uzunluğu göstergesi
@@ -68,6 +73,9 @@ React Native ve Expo ile geliştirilmiş modern bir Wordle oyunu. Firebase enteg
   - Şifre güvenlik kontrolleri
   - "Create Account" başlığı
 
+![Screenshot_1750200385](https://github.com/user-attachments/assets/a5743f27-772e-4cbb-9518-9ce1d938260a)
+![Screenshot_1750200339](https://github.com/user-attachments/assets/eb74b04c-b420-4763-904a-960db591d5dd)
+
 ### 🔥 Seri Takip Ekranı (Modal)
 - **Seri Bilgileri**:
   - Mevcut seri sayısı
@@ -77,6 +85,8 @@ React Native ve Expo ile geliştirilmiş modern bir Wordle oyunu. Firebase enteg
   - Alev ikonu (🔥) seri göstergesi
   - İstatistik kartları
   - Günlük ilerleme çubuğu
+
+![Screenshot_1750200403](https://github.com/user-attachments/assets/1ac2bfc5-2a62-464d-a6f9-5cdd21fe8202)
 
 ### ⚙️ Ayarlar ve Onay Ekranları
 - **Çıkış Onayı**:
