@@ -30,7 +30,6 @@ React Native ve Expo ile geliştirilmiş modern bir Wordle oyunu. Firebase enteg
 
 <img src="https://github.com/user-attachments/assets/74deb3e8-e4f3-4ccf-852c-1f4374897c4f" alt="Screenshot_1750200336" width="25%">
 
-
 ### 🎯 Oyun Ekranı
 - **Görünüm**: 
   - Üst kısımda kelime uzunluğu göstergesi
@@ -41,9 +40,13 @@ React Native ve Expo ile geliştirilmiş modern bir Wordle oyunu. Firebase enteg
   - 🟨 Sarı: Harf kelimede var ama yanlış pozisyonda
   - ⬜ Gri: Harf kelimede yok
 - **Klavye**: 
-  - QWERTY düzeninde harfler
+  - Alfabetik sıraya göre harfler
   - Enter ve Backspace butonları
   - Harflerin durumuna göre renk değişimi
+
+<img src="https://github.com/user-attachments/assets/2d3cfd04-803e-4033-bbf4-810f6819f09c" alt="Screenshot_1750200902" width="25%">
+
+<img src="https://github.com/user-attachments/assets/9fb83cac-a860-41ed-a93f-c3c4268d2967" alt="Screenshot_1750201180" width="25%">
 
 ### 🏆 Sonuç Ekranı (Modal)
 - **Kazanma Durumu**:
@@ -60,6 +63,10 @@ React Native ve Expo ile geliştirilmiş modern bir Wordle oyunu. Firebase enteg
   - Kopyala butonu
   - Genel paylaşım
 
+<img src="https://github.com/user-attachments/assets/9d25bf17-eae7-4e6e-a5df-13aac4f1ab34" alt="Screenshot_1750200946" width="25%">
+
+<img src="https://github.com/user-attachments/assets/e2e7f69f-c7b0-4959-9534-4fee7abab98b" alt="Screenshot_1750201024" width="25%">
+
 ### 👤 Profil ve Giriş Ekranları
 - **Giriş Yapmamış Kullanıcılar**:
   - "Sınırsız oyun için giriş yapın!" mesajı
@@ -73,8 +80,9 @@ React Native ve Expo ile geliştirilmiş modern bir Wordle oyunu. Firebase enteg
   - Şifre güvenlik kontrolleri
   - "Create Account" başlığı
 
-![Screenshot_1750200385](https://github.com/user-attachments/assets/a5743f27-772e-4cbb-9518-9ce1d938260a)
-![Screenshot_1750200339](https://github.com/user-attachments/assets/eb74b04c-b420-4763-904a-960db591d5dd)
+<img src="https://github.com/user-attachments/assets/eb74b04c-b420-4763-904a-960db591d5dd" alt="Screenshot_1750200339" width="25%">
+
+<img src="https://github.com/user-attachments/assets/a5743f27-772e-4cbb-9518-9ce1d938260a" alt="Screenshot_1750200385" width="25%">
 
 ### 🔥 Seri Takip Ekranı (Modal)
 - **Seri Bilgileri**:
@@ -107,7 +115,7 @@ React Native ve Expo ile geliştirilmiş modern bir Wordle oyunu. Firebase enteg
 
 ## 🚀 Kurulum
 
-
+Apk dosyasını indirmek için: 
 
 ## 🏗️ Proje Yapısı
 
