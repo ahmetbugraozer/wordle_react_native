@@ -1,50 +1,198 @@
-# Welcome to your Expo app 👋
+# Wordle React Native
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+React Native ve Expo ile geliştirilmiş modern bir Wordle oyunu. Firebase entegrasyonu ve gerçek zamanlı kelime doğrulama özelliklerine sahiptir.
 
-## Get started
+## 🎮 Özellikler
 
-1. Install dependencies
+- **Klasik Wordle Oyunu**: 5-6 denemede kelimeyi tahmin edin
+- **Çoklu Kelime Uzunlukları**: 4, 5 ve 6 harfli kelimeler için destek
+- **Gerçek Zamanlı Doğrulama**: Dictionary API kullanarak kelime doğrulama
+- **Firebase Entegrasyonu**: Kullanıcı kimlik doğrulama ve veri depolama
+- **Çapraz Platform**: iOS ve Android'de çalışır
+- **Çevrimdışı Destek**: API mevcut olmadığında yedek kelimeler
+- **Modern Arayüz**: Temiz ve sezgisel kullanıcı deneyimi
+- **Sosyal Paylaşım**: Sonuçları WhatsApp, Twitter ve diğer platformlarda paylaşma
+- **Seri Takibi**: Günlük oynama serilerini takip etme
+- **İstatistikler**: Oyun geçmişi ve başarı oranları
 
-   ```bash
-   npm install
-   ```
+## 📱 Uygulama Ekranları
 
-2. Start the app
+### 🏠 Ana Ekran (Başlangıç Ekranı)
+- **Görünüm**: WORDLE başlığı ve kelime uzunluğu seçimi
+- **Özellikler**: 
+  - 4, 5, 6 harfli kelimeler için butonlar
+  - Her buton farklı görselle desteklenir
+  - Profil butonu (kullanıcı girişi için)
+  - Seri sayacı (giriş yapan kullanıcılar için)
+- **Kullanım**: Kullanıcı oyuna başlamak için kelime uzunluğunu seçer
 
-   ```bash
-    npx expo start
-   ```
+### 🎯 Oyun Ekranı
+- **Görünüm**: 
+  - Üst kısımda kelime uzunluğu göstergesi
+  - Ortada tahmin kutuları (5 satır, seçilen uzunluk kadar sütun)
+  - Alt kısımda sanal klavye
+- **Renk Kodları**:
+  - 🟩 Yeşil: Harf doğru ve doğru pozisyonda
+  - 🟨 Sarı: Harf kelimede var ama yanlış pozisyonda
+  - ⬜ Gri: Harf kelimede yok
+- **Klavye**: 
+  - QWERTY düzeninde harfler
+  - Enter ve Backspace butonları
+  - Harflerin durumuna göre renk değişimi
 
-In the output, you'll find options to open the app in a
+### 🏆 Sonuç Ekranı (Modal)
+- **Kazanma Durumu**:
+  - "Congratulations!" başlığı
+  - Doğru kelimeyi gösterir
+  - Paylaşım butonları
+- **Kaybetme Durumu**:
+  - "You Lost!" başlığı
+  - Doğru cevabı gösterir
+  - Paylaşım seçenekleri
+- **Paylaşım Seçenekleri**:
+  - WhatsApp paylaşımı
+  - Twitter/X paylaşımı
+  - Kopyala butonu
+  - Genel paylaşım
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 👤 Profil ve Giriş Ekranları
+- **Giriş Yapmamış Kullanıcılar**:
+  - "Sınırsız oyun için giriş yapın!" mesajı
+  - Giriş Yap ve Kayıt Ol butonları
+- **Giriş Modal'ı**:
+  - E-posta ve şifre alanları
+  - Şifre görünürlük toggle'ı
+  - "Welcome Back!" başlığı
+- **Kayıt Modal'ı**:
+  - Ad Soyad, e-posta, şifre ve şifre onayı
+  - Şifre güvenlik kontrolleri
+  - "Create Account" başlığı
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### 🔥 Seri Takip Ekranı (Modal)
+- **Seri Bilgileri**:
+  - Mevcut seri sayısı
+  - Toplam oynanan oyun sayısı
+  - Son oynama tarihi
+- **Görsel Göstergeler**:
+  - Alev ikonu (🔥) seri göstergesi
+  - İstatistik kartları
+  - Günlük ilerleme çubuğu
 
-## Get a fresh project
+### ⚙️ Ayarlar ve Onay Ekranları
+- **Çıkış Onayı**:
+  - "Çıkış yapmak istediğinizden emin misiniz?" mesajı
+  - Evet/Hayır butonları
+- **Hata Mesajları**:
+  - "Geçerli bir kelime girin!" uyarısı
+  - API bağlantı hataları için bildirimler
 
-When you're ready, run:
+## 🛠️ Kullanılan Teknolojiler
 
-```bash
-npm run reset-project
+- **React Native**: Mobil uygulama framework'ü
+- **Expo**: Geliştirme platformu ve araçları
+- **TypeScript**: Tip güvenli JavaScript
+- **Firebase**: Backend servisleri (Auth, Firestore)
+- **RapidAPI**: Kelime üretimi API'si
+- **Dictionary API**: Kelime doğrulama
+
+## 🚀 Kurulum
+
+
+
+## 🏗️ Proje Yapısı
+
+```
+wordle_react_native/
+├── src/
+│   ├── components/         # Tekrar kullanılabilir UI bileşenleri
+│   │   ├── auth/          # Kimlik doğrulama bileşenleri
+│   │   ├── Elements.ts    # Stil sabitleri ve renkler
+│   │   ├── ProfileButton.tsx
+│   │   └── ResultModal.tsx
+│   ├── screens/           # Uygulama ekranları
+│   ├── utils/             # Yardımcı fonksiyonlar ve servisler
+│   │   ├── alphabet.ts    # Alfabe ve klavye düzeni
+│   │   └── wordServices.ts # Kelime API servisleri
+│   ├── logic/             # Oyun mantığı
+│   │   └── GameLogic.ts
+│   ├── services/          # Firebase servisleri
+│   │   ├── AuthService.ts
+│   │   └── FirebaseService.ts
+│   ├── config/            # Yapılandırma dosyaları
+│   │   └── firebase.ts
+│   └── contexts/          # React Context'leri
+├── assets/                # Görseller, fontlar ve statik dosyalar
+├── app.config.js          # Expo yapılandırması
+├── .env                   # Ortam değişkenleri
+└── README.md              # Bu dosya
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🎯 Nasıl Oynanır
 
-## Learn more
+1. **Amaç**: Gizli kelimeyi 6 denemede veya daha azında tahmin edin
+2. **Girdi**: Geçerli bir kelime yazın ve Enter'a basın
+3. **Geri Bildirim**: 
+   - 🟩 Yeşil: Harf doğru ve doğru pozisyonda
+   - 🟨 Sarı: Harf kelimede var ama yanlış pozisyonda
+   - ⬜ Gri: Harf kelimede yok
+4. **Kazanma**: Kelimeyi doğru tahmin edin
+5. **Kaybetme**: 6 deneme hakkınızı tüketin
 
-To learn more about developing your project with Expo, look at the following resources:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 📋 Detaylı Özellikler
 
-## Join the community
+### Kelime Üretimi
+- RapidAPI'nin Random Word API'sini kullanır
+- API mevcut olmadığında önceden tanımlı kelimelerle yedekleme sistemi
+- Çoklu kelime uzunluğu desteği (4, 5, 6 harf)
 
-Join our community of developers creating universal apps.
+### Kelime Doğrulama
+- Dictionary API kullanarak gerçek zamanlı doğrulama
+- Hedef kelime sözlükte olmasa bile kabul edilir
+- Ağ hataları için hata yönetimi
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Firebase Entegrasyonu
+- Kullanıcı kimlik doğrulama
+- Oyun istatistikleri depolama
+- Cihazlar arası senkronizasyon
+- Günlük seri takibi
+
+### Kullanıcı Deneyimi
+- Sezgisel dokunmatik klavye
+- Anlık görsel geri bildirim
+- Sosyal medya paylaşım entegrasyonu
+- Çevrimdışı oyun desteği
+
+## 🙏 Teşekkürler
+
+- Josh Wardle'a orijinal Wordle oyunu için
+- [RapidAPI](https://rapidapi.com/)'ye kelime üretimi API'si için
+- [Dictionary API](https://dictionaryapi.dev/)'ye kelime doğrulama için
+- [Firebase](https://firebase.google.com/)'e backend servisleri için
+- [Expo](https://expo.dev/)'ya geliştirme araçları için
+
+---
+
+## 🎨 Ekran Görüntüleri ve Kullanım Detayları
+
+### Ana Ekran Akışı
+1. Uygulama açılır ve kullanıcı WORDLE başlığını görür
+2. Alt kısımda 3 seçenek sunulur: "4 Letters", "5 Letters", "6 Letters"
+3. Her seçenek görsel bir kart şeklinde tasarlanmıştır
+4. Sağ üst köşede profil ikonu ve seri sayacı bulunur
+
+### Oyun Mekaniği
+- Oyun başladığında seçilen uzunlukta boş kutular görüntülenir
+- Kullanıcı sanal klavyeyi kullanarak kelime girer
+- Her harf girişinde kutular dolar
+- Enter tuşuna basıldığında kelime kontrol edilir
+- Geçersiz kelime girişinde uyarı mesajı gösterilir
+- Geçerli kelime girişinde renkli geri bildirim verilir
+
+### Sosyal Özellikler
+- Oyun bitiminde sonuç emoji'lerle gösterilir
+- Paylaşım butonu ile sonuçlar sosyal medyada paylaşılabilir
+- Giriş yapan kullanıcılar için seri takibi yapılır
+- İstatistikler Firebase'de saklanır
+
+Bu kapsamlı dokümantasyon, Wordle React Native uygulamanızın tüm özelliklerini ve kullanım şekillerini Türkçe olarak açıklamaktadır.
