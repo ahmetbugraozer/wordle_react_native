@@ -1,7 +1,5 @@
 import { Alert } from 'react-native';
-
-import dotenv from 'dotenv';
-dotenv.config();
+import Constants from 'expo-constants';
 
 
 interface WordValidatorDictionary {
@@ -14,11 +12,17 @@ interface ApiResponse {
 }
 
 class WordService {
-  private static readonly base_url = process.env.BASE_URL;
-  private static readonly api_key = process.env.API_KEY;
+  private static readonly base_url = Constants.expoConfig?.extra?.baseUrl;
+  private static readonly api_key = Constants.expoConfig?.extra?.apiKey;
 
   static async fetchWords(length: number): Promise<string[]> {
     try {
+      // API anahtarını kontrol et
+      if (!this.api_key || !this.base_url) {
+        console.warn('API anahtarı veya base URL eksik, fallback kelimeler kullanılıyor');
+        throw new Error('API configuration missing');
+      }
+
       const response = await fetch(`${this.base_url}/L/${length}`, {
         method: 'GET',
         headers: {
@@ -26,6 +30,11 @@ class WordService {
           'x-rapidapi-host': 'random-word-api.p.rapidapi.com'
         }
       });
+
+      if (response.status === 403) {
+        console.warn('API quota exceeded or unauthorized, using fallback words');
+        throw new Error('API quota exceeded');
+      }
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -37,15 +46,16 @@ class WordService {
       return [word];
 
     } catch (error) {
-      console.error('Service Error:', error);
+      console.warn('Service Error:', error);
       const backupWords: { [key: number]: string[] } = {
-        4: ['WORD', 'PLAY', 'GAME', 'TEST'],
-        5: ['WORLD', 'PLAYS', 'GAMES', 'TESTS'],
-        6: ['WORLDS', 'PLAYER', 'GAMING', 'TESTED']
+        4: ['WORD', 'PLAY', 'GAME', 'TEST', 'LOVE', 'TIME', 'WORK', 'LIFE', 'HOPE', 'TEAM'],
+        5: ['WORLD', 'PLAYS', 'GAMES', 'TESTS', 'LEARN', 'BRAIN', 'HEART', 'SMILE', 'PEACE', 'CHAIR'],
+        6: ['WORLDS', 'PLAYER', 'GAMING', 'TESTED', 'BRIDGE', 'FRIEND', 'BOTTLE', 'FLOWER', 'WINTER', 'SUMMER']
       };
       
-      const fallbackWords = backupWords[length] || ['TEST'];
+      const fallbackWords = backupWords[length] || ['BACKUP'];
       const randomIndex = Math.floor(Math.random() * fallbackWords.length);
+      console.log('Using fallback word:', fallbackWords[randomIndex]);
       return [fallbackWords[randomIndex]];
     }
   }
