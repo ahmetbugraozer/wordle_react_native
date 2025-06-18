@@ -1,4 +1,6 @@
-Uygulamanın APK dosyasını [buradan](https://drive.google.com/file/d/1ap57KCybpCbAmNA7Ed86c-Jrg6VUyl3i/view?usp=sharing) indirebilirsiniz.  
+Uygulamanın APK dosyasını [buradan](https://drive.google.com/file/d/14EurGgEH6vUGByk4IXwTbmhnyapG5_HK/view?usp=sharing) indirebilirsiniz.  
+
+Uygulamanın demo videosunu [buradan](https://drive.google.com/file/d/1jJZ2jFDwWdvjoyA-g2vohFegSUh3oyE-/view?usp=sharing) izleyebilirsiniz.
 
 # Wordle React Native
 
