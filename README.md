@@ -1,3 +1,5 @@
+Uygulamanın APK dosyasını [buradan](https://drive.google.com/file/d/1ap57KCybpCbAmNA7Ed86c-Jrg6VUyl3i/view?usp=sharing) indirebilirsiniz.  
+
 # Wordle React Native
 
 React Native ve Expo ile geliştirilmiş modern bir Wordle oyunu. Firebase entegrasyonu ve gerçek zamanlı kelime doğrulama özelliklerine sahiptir.
